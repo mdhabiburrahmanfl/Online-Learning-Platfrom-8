@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch with modern HTML, CSS, JavaScript, React, Node.js, and deployment workflows.",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sophia Lee",
+    "duration": "14 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Build user-centered interfaces, wireframes, and polished product flows with design systems and modern prototyping methods.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Accelerator",
+    "instructor": "Ava Chen",
+    "duration": "16 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Discover SEO, content strategy, email funnels, paid ads, and analytics to grow brands with measurable results.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "Productivity for Remote Teams",
+    "instructor": "Liam Brooks",
+    "duration": "8 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Master async collaboration, focus systems, planning rituals, and performance habits for distributed learning and work.",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    "category": "Career"
+  },
+  {
+    "id": 5,
+    "title": "Data Analytics with Excel and SQL",
+    "instructor": "Mason Rivera",
+    "duration": "18 hours",
+    "rating": 4.85,
+    "level": "Intermediate",
+    "description": "Analyze business data with Excel dashboards, SQL queries, reporting techniques, and practical decision-making exercises.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "category": "Analytics"
+  },
+  {
+    "id": 6,
+    "title": "Brand Strategy for Creators",
+    "instructor": "Nina Patel",
+    "duration": "11 hours",
+    "rating": 4.75,
+    "level": "Beginner",
+    "description": "Shape a memorable creator brand through messaging, content pillars, audience research, and visual consistency.",
+    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    "category": "Branding"
+  },
+  {
+    "id": 7,
+    "title": "Advanced React Patterns",
+    "instructor": "Ethan Walker",
+    "duration": "12 hours",
+    "rating": 4.95,
+    "level": "Advanced",
+    "description": "Level up component architecture, performance, routing patterns, and state design for production-scale React apps.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "Motion Graphics Essentials",
+    "instructor": "Emily Stone",
+    "duration": "10 hours",
+    "rating": 4.72,
+    "level": "Intermediate",
+    "description": "Create energetic visuals, transitions, and promotional scenes for social media, products, and digital storytelling.",
+    "image": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80",
+    "category": "Design"
+  }
+]
