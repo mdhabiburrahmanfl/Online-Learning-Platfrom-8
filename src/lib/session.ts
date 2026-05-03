@@ -1,9 +1,20 @@
 import { headers } from "next/headers";
 
-import { auth } from "@/lib/auth";
+import { isDemoAuthServer } from "@/lib/auth-mode";
+import { getDemoSession } from "@/lib/demo-session";
 
 export async function getServerSession() {
-  return auth.api.getSession({
-    headers: await headers(),
-  });
+  if (isDemoAuthServer()) {
+    return getDemoSession();
+  }
+
+  try {
+    const { auth } = await import("@/lib/auth");
+
+    return await auth.api.getSession({
+      headers: await headers(),
+    });
+  } catch {
+    return getDemoSession();
+  }
 }

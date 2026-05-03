@@ -6,6 +6,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { authClient } from "@/lib/auth-client";
+import { isDemoAuthClient } from "@/lib/auth-mode";
 import { demoCredentials } from "@/lib/demo-credentials";
 import { SocialLoginButton } from "@/components/auth/social-login-button";
 
@@ -21,6 +22,35 @@ export function LoginForm({ redirectTo }: { redirectTo: string }) {
     setErrorMessage("");
 
     startTransition(async () => {
+      if (isDemoAuthClient()) {
+        const response = await fetch("/api/demo-auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        });
+
+        const result = (await response.json().catch(() => null)) as
+          | { message?: string }
+          | null;
+
+        if (!response.ok) {
+          const message = result?.message || "Demo login failed.";
+          setErrorMessage(message);
+          toast.error(message);
+          return;
+        }
+
+        toast.success("Welcome back.");
+        router.push(redirectTo);
+        router.refresh();
+        return;
+      }
+
       const { error } = await authClient.signIn.email({
         email,
         password,
@@ -61,6 +91,12 @@ export function LoginForm({ redirectTo }: { redirectTo: string }) {
           A demo user is already prepared for checking. The email and password
           are prefilled, so you can click the login button directly.
         </p>
+        {isDemoAuthClient() ? (
+          <p className="mt-2 text-sm leading-7 text-amber-900">
+            The live Vercel demo uses this prepared account to avoid hosted
+            database issues.
+          </p>
+        ) : null}
       </div>
 
       <form className="mt-8 space-y-4" onSubmit={handleSubmit}>

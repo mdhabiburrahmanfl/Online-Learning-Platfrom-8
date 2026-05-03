@@ -1,9 +1,10 @@
 import Database from "better-sqlite3";
 import { betterAuth } from "better-auth";
 
+import { isDemoAuthServer } from "@/lib/auth-mode";
 import { getBaseUrl } from "@/lib/utils";
 
-const database = new Database("skillsphere.db");
+const database = isDemoAuthServer() ? undefined : new Database("skillsphere.db");
 
 const socialProviders =
   process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
@@ -17,7 +18,7 @@ const socialProviders =
     : undefined;
 
 export const auth = betterAuth({
-  database,
+  ...(database ? { database } : {}),
   baseURL: getBaseUrl(),
   secret: process.env.BETTER_AUTH_SECRET || "development-secret-change-me",
   emailAndPassword: {

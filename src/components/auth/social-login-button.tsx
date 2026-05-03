@@ -5,6 +5,7 @@ import { useTransition } from "react";
 import { toast } from "sonner";
 
 import { authClient } from "@/lib/auth-client";
+import { isDemoAuthClient } from "@/lib/auth-mode";
 
 type SocialLoginButtonProps = {
   callbackURL: string;
@@ -15,6 +16,11 @@ export function SocialLoginButton({ callbackURL }: SocialLoginButtonProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleGoogleLogin = () => {
+    if (isDemoAuthClient()) {
+      toast.error("Google login is disabled on the live demo. Use the demo login instead.");
+      return;
+    }
+
     if (!process.env.NEXT_PUBLIC_GOOGLE_AUTH_ENABLED) {
       toast.error("Google login is not configured yet. Add the env keys first.");
       return;

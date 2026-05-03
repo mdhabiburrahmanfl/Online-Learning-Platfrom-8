@@ -5,6 +5,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { authClient } from "@/lib/auth-client";
+import { isDemoAuthClient } from "@/lib/auth-mode";
 
 type ProfileUpdateFormProps = {
   defaultName: string;
@@ -24,6 +25,29 @@ export function ProfileUpdateForm({
     event.preventDefault();
 
     startTransition(async () => {
+      if (isDemoAuthClient()) {
+        const response = await fetch("/api/demo-auth/update", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            image,
+          }),
+        });
+
+        if (!response.ok) {
+          toast.error("Profile update failed.");
+          return;
+        }
+
+        toast.success("Profile updated successfully.");
+        router.push("/my-profile");
+        router.refresh();
+        return;
+      }
+
       const { error } = await authClient.updateUser({
         name,
         image,

@@ -6,6 +6,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { authClient } from "@/lib/auth-client";
+import { isDemoAuthClient } from "@/lib/auth-mode";
 import { SocialLoginButton } from "@/components/auth/social-login-button";
 
 export function RegisterForm() {
@@ -22,6 +23,13 @@ export function RegisterForm() {
     setErrorMessage("");
 
     startTransition(async () => {
+      if (isDemoAuthClient()) {
+        toast.success("Live demo mode is ready. Please use the prepared login.");
+        router.push("/login");
+        router.refresh();
+        return;
+      }
+
       const { error } = await authClient.signUp.email({
         name,
         email,

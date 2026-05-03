@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { LoginForm } from "@/components/auth/login-form";
+import { isDemoAuthServer } from "@/lib/auth-mode";
 import { ensureDemoUser } from "@/lib/demo-user";
 import { getServerSession } from "@/lib/session";
 
@@ -15,7 +16,9 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
     redirect("/");
   }
 
-  await ensureDemoUser();
+  if (!isDemoAuthServer()) {
+    await ensureDemoUser();
+  }
 
   const { redirect: redirectTo } = await searchParams;
 
