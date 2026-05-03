@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { CourseCard } from "@/components/course/course-card";
+import { HeroShowcase } from "@/components/home/hero-showcase";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { getPopularCourses, getTrendingCourses } from "@/lib/courses";
 
@@ -60,7 +61,7 @@ export default async function HomePage() {
       <section className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-950 px-6 py-16 text-white shadow-2xl shadow-slate-300/40 sm:px-10 lg:px-14">
         <div className="absolute -right-24 -top-16 h-56 w-56 rounded-full bg-amber-300/20 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-teal-400/20 blur-3xl" />
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-center gap-12 xl:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-8 animate__animated animate__fadeInLeft">
             <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100">
               Modern learning paths for ambitious builders
@@ -91,34 +92,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="animate__animated animate__fadeInRight rounded-[2rem] bg-white/8 p-6 backdrop-blur">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] bg-white px-5 py-6 text-slate-950">
-                <p className="text-sm uppercase tracking-[0.25em] text-slate-500">
-                  Active Courses
-                </p>
-                <p className="mt-3 text-4xl font-semibold">120+</p>
-              </div>
-              <div className="rounded-[1.75rem] bg-amber-300 px-5 py-6 text-slate-950">
-                <p className="text-sm uppercase tracking-[0.25em] text-slate-700">
-                  Expert Mentors
-                </p>
-                <p className="mt-3 text-4xl font-semibold">35</p>
-              </div>
-              <div className="rounded-[1.75rem] bg-teal-400 px-5 py-6 text-slate-950">
-                <p className="text-sm uppercase tracking-[0.25em] text-slate-700">
-                  Completion Focus
-                </p>
-                <p className="mt-3 text-4xl font-semibold">92%</p>
-              </div>
-              <div className="rounded-[1.75rem] bg-white/12 px-5 py-6">
-                <p className="text-sm uppercase tracking-[0.25em] text-slate-300">
-                  Community Support
-                </p>
-                <p className="mt-3 text-4xl font-semibold">24/7</p>
-              </div>
-            </div>
-          </div>
+          <HeroShowcase />
         </div>
       </section>
 
@@ -136,7 +110,7 @@ export default async function HomePage() {
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="hover-lift-card rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
           <SectionHeading
             eyebrow="Learning Tips"
             title="Simple habits that make online study stick"
@@ -147,7 +121,7 @@ export default async function HomePage() {
           {learningTips.map((tip, index) => (
             <div
               key={tip.title}
-              className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
+              className="hover-lift-card rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-lg font-semibold text-amber-800">
@@ -177,12 +151,12 @@ export default async function HomePage() {
           {instructors.map((instructor) => (
             <article
               key={instructor.name}
-              className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
+              className="group hover-lift-card overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
             >
               <img
                 src={instructor.image}
                 alt={instructor.name}
-                className="h-72 w-full object-cover"
+                className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
               />
               <div className="space-y-2 p-6">
                 <h3 className="text-xl font-semibold text-slate-950">

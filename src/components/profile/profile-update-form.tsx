@@ -43,7 +43,7 @@ export function ProfileUpdateForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto w-full max-w-xl space-y-5 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/80"
+      className="hover-lift-card mx-auto w-full max-w-xl space-y-5 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/80"
     >
       <div className="space-y-3">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#0f766e]">

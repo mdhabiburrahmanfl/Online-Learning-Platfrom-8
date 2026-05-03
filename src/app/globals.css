@@ -36,3 +36,30 @@ button {
     border-color 0.2s ease,
     transform 0.2s ease;
 }
+
+.hover-lift-card,
+.hover-soft-card,
+.hover-dark-card {
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.hover-lift-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(15, 118, 110, 0.18);
+  box-shadow: 0 26px 50px rgba(148, 163, 184, 0.18);
+}
+
+.hover-soft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+}
+
+.hover-dark-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(251, 191, 36, 0.55);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.4);
+}

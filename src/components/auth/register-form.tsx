@@ -43,7 +43,7 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-md rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl shadow-teal-100">
+    <div className="hover-lift-card mx-auto w-full max-w-md rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl shadow-teal-100">
       <div className="space-y-3 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#0f766e]">
           Join the Platform

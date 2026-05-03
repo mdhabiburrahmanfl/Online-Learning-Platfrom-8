@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { LoginForm } from "@/components/auth/login-form";
+import { ensureDemoUser } from "@/lib/demo-user";
 import { getServerSession } from "@/lib/session";
 
 type LoginPageProps = {
@@ -13,6 +14,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   if (session?.user) {
     redirect("/");
   }
+
+  await ensureDemoUser();
 
   const { redirect: redirectTo } = await searchParams;
 

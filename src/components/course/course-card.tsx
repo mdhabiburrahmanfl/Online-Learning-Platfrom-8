@@ -12,7 +12,7 @@ export function CourseCard({
   buttonLabel = "View Details",
 }: CourseCardProps) {
   return (
-    <article className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-100">
+    <article className="group hover-lift-card overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
       <div className="relative">
         <img
           src={course.image}

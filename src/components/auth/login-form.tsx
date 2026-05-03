@@ -6,12 +6,13 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { authClient } from "@/lib/auth-client";
+import { demoCredentials } from "@/lib/demo-credentials";
 import { SocialLoginButton } from "@/components/auth/social-login-button";
 
 export function LoginForm({ redirectTo }: { redirectTo: string }) {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(demoCredentials.email);
+  const [password, setPassword] = useState(demoCredentials.password);
   const [errorMessage, setErrorMessage] = useState("");
   const [isPending, startTransition] = useTransition();
 
@@ -39,7 +40,7 @@ export function LoginForm({ redirectTo }: { redirectTo: string }) {
   };
 
   return (
-    <div className="mx-auto w-full max-w-md rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl shadow-amber-100">
+    <div className="hover-lift-card mx-auto w-full max-w-md rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl shadow-amber-100">
       <div className="space-y-3 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#0f766e]">
           Welcome Back
@@ -49,6 +50,16 @@ export function LoginForm({ redirectTo }: { redirectTo: string }) {
         </h1>
         <p className="text-sm leading-7 text-slate-500">
           Access your saved learning path and protected course details.
+        </p>
+      </div>
+
+      <div className="mt-6 rounded-[1.6rem] border border-amber-200 bg-amber-50 px-5 py-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-700">
+          Quick Demo Login
+        </p>
+        <p className="mt-2 text-sm leading-7 text-amber-900">
+          A demo user is already prepared for checking. The email and password
+          are prefilled, so you can click the login button directly.
         </p>
       </div>
 

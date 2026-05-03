@@ -1,13 +1,13 @@
 import Link from "next/link";
 
+import { Logo } from "@/components/shared/logo";
+
 export function Footer() {
   return (
     <footer className="border-t border-slate-200/80 bg-white/90 backdrop-blur">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-            SkillSphere
-          </h3>
+          <Logo showTagline={false} />
           <p className="max-w-md text-sm leading-7 text-slate-600">
             A modern online learning platform for students who want practical,
             career-focused growth across development, design, marketing, and

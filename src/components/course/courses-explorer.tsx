@@ -22,7 +22,7 @@ export function CoursesExplorer({ courses }: { courses: Course[] }) {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="hover-lift-card rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="max-w-xl space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#0f766e]">
             Search Courses
@@ -58,7 +58,7 @@ export function CoursesExplorer({ courses }: { courses: Course[] }) {
           ))}
         </div>
       ) : (
-        <div className="rounded-[2rem] border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
+        <div className="hover-lift-card rounded-[2rem] border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
           <h2 className="text-2xl font-semibold text-slate-900">
             No matching course found
           </h2>

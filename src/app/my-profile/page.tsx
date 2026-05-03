@@ -11,9 +11,9 @@ export default async function MyProfilePage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-4xl rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/80 sm:p-10">
+    <section className="hover-lift-card mx-auto w-full max-w-4xl rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/80 sm:p-10">
       <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-        <div className="rounded-[2rem] bg-slate-950 p-8 text-white">
+        <div className="hover-dark-card rounded-[2rem] bg-slate-950 p-8 text-white">
           <img
             src={session.user.image || "https://i.ibb.co/Fq8X8nT/avatar.png"}
             alt={session.user.name || "Profile avatar"}
@@ -37,7 +37,7 @@ export default async function MyProfilePage() {
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+            <div className="hover-soft-card rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
               <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
                 Name
               </p>
@@ -45,7 +45,7 @@ export default async function MyProfilePage() {
                 {session.user.name}
               </p>
             </div>
-            <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+            <div className="hover-soft-card rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
               <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
                 Email
               </p>
@@ -53,7 +53,7 @@ export default async function MyProfilePage() {
                 {session.user.email}
               </p>
             </div>
-            <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 sm:col-span-2">
+            <div className="hover-soft-card rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 sm:col-span-2">
               <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
                 Image URL
               </p>
@@ -62,7 +62,7 @@ export default async function MyProfilePage() {
               </p>
             </div>
           </div>
-          <div className="rounded-[1.75rem] border border-dashed border-slate-300 p-6">
+          <div className="hover-lift-card rounded-[1.75rem] border border-dashed border-slate-300 p-6">
             <h3 className="text-xl font-semibold text-slate-950">
               Challenge Requirement
             </h3>
